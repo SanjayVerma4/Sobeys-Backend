@@ -1,0 +1,9 @@
+input sortingObj {
+    key:String
+    value:String
+}
+   
+input pagingObj {
+    page: Int
+    limit: Int
+}

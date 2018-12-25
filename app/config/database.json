@@ -1,0 +1,68 @@
+{
+  "defaultEnv": "development",
+  "sql-file": true,
+  "development": {
+      "driver": "mysql",
+      "multipleStatements": true,
+      "host": {
+          "ENV": "DEVELOPMENT_DB_HOST"
+      },
+      "user": {
+          "ENV": "DEVELOPMENT_DB_USER"
+      },
+      "password": {
+          "ENV": "DEVELOPMENT_DB_PASS"
+      },
+      "database": {
+          "ENV": "DEVELOPMENT_DB_NAME"
+      }
+  },
+  "testing": {
+      "driver": "mysql",
+      "multipleStatements": true,
+      "host": {
+          "ENV": "TESTING_DB_HOST"
+      },
+      "user": {
+          "ENV": "TESTING_DB_USER"
+      },
+      "password": {
+          "ENV": "TESTING_DB_PASS"
+      },
+      "database": {
+          "ENV": "TESTING_DB_NAME"
+      }
+  },
+  "staging": {
+      "driver": "mysql",
+      "multipleStatements": true,
+      "host": {
+          "ENV": "STAGING_DB_HOST"
+      },
+      "user": {
+          "ENV": "STAGING_DB_USER"
+      },
+      "password": {
+          "ENV": "STAGING_DB_PASS"
+      },
+      "database": {
+          "ENV": "STAGING_DB_NAME"
+      }
+  },
+  "production": {
+      "driver": "mysql",
+      "multipleStatements": true,
+      "host": {
+          "ENV": "PRODUCTION_DB_HOST"
+      },
+      "user": {
+          "ENV": "PRODUCTION_DB_USER"
+      },
+      "password": {
+          "ENV": "PRODUCTION_DB_PASS"
+      },
+      "database": {
+          "ENV": "PRODUCTION_DB_NAME"
+      }
+  }
+}

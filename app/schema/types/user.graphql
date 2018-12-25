@@ -1,0 +1,44 @@
+input saveUserIn{
+  name:String!
+  email:String!
+  gender:String!
+}
+
+type saveUserOut{
+  message:String
+  errors:error
+}
+
+input filterObj{
+  id:Int
+  name:String
+  status:Int
+}
+
+input getUsersIn{
+  filter:filterObj
+  sorting:sortingObj
+  paging:pagingObj
+}
+
+type User{
+  id:Int
+  name:String
+  email:String
+  gender:String
+  status:Int
+}
+
+type getUsersOut{
+  data:[User]
+  errors:error
+}
+
+type Query {
+  getUsers(input:getUsersIn):getUsersOut
+}
+
+type Mutation {
+  saveUser(input:saveUserIn) : saveUserOut
+}
+

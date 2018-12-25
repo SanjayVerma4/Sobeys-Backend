@@ -1,0 +1,10 @@
+type error {
+    message:String
+    name:String
+    data:[errordata]
+   }
+   
+type errordata {
+    fieldName: String
+    message: String
+}

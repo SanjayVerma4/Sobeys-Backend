@@ -1,0 +1,68 @@
+type storeHoursOfOperationArr{
+  closingTime:String
+  openingTime:String
+  operatingDate:String
+  operatingDayType:String
+  operatingDayTypeText:String
+  operatingHoursType:String
+  operatingHoursTypeText:String
+}
+
+type pharmacyHoursOfOperation{
+  closingTime:String
+  openingTime:String
+  operatingDate:String
+  operatingDayType:String
+  operatingDayTypeText:String
+  operatingHoursType:String
+  operatingHoursTypeText:String
+}
+
+type Store{
+  address1:String
+  address2:String
+  city:String
+  corporateId:String
+  defaultStoreLanguage:String
+  email:String
+  fax1:String
+  fax2:String
+  labelPrefix:String
+  latitude:Int
+  longitude:Int
+  name:String
+  pharmacyHoursOfOperation:[pharmacyHoursOfOperation]
+  phone1:String
+  phone2:String
+  postal:String
+  prov:String
+  storeDownUserContactInformation:String
+  storeDownUserMessage:String
+  storeDownUserMessageValidUntil:String
+  storeHoursOfOperation:[storeHoursOfOperationArr]
+  storeId:String
+  storeNumber:String
+  supportsAddNewRxToCart:Boolean
+  supportsRxChainAttributes:Boolean
+  supportsUpdatingStoreDownMessages:Boolean
+  website:String
+  windowsTimeZone:String
+}
+
+type storeList{
+  storeList:[Store]
+}
+
+type listStoreOut{
+  data:storeList
+  errors:error
+}
+
+type Query {
+  listStore:listStoreOut
+}
+
+# type Mutation {
+#   refillPerscrption(input:refillPerscrptionIn) : refillPerscrptionOut
+# }
+

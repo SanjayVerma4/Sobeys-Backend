@@ -32,7 +32,8 @@ module.exports = {
             }
           ],
     },
-    // microservicesLinks: {
-    //     SobeysAPI: `${process.env.SOBEYS_SERVICE_SCHEME || 'http'}://${process.env.SOBEYS_SERVICE_HOST }:${process.env.SOBEYS_SERVICE_PORT }${process.env.SOBEYS_SERVICE_PATH || '/'}`,
-    // }
+    microservicesLinks: {
+        //SobeysAPI: `${process.env.SOBEYS_SERVICE_SCHEME || 'http'}://${process.env.SOBEYS_SERVICE_HOST }:${process.env.SOBEYS_SERVICE_PORT }${process.env.SOBEYS_SERVICE_PATH || '/'}`,
+        SobeysAPI: `${process.env.SOBEYS_SERVICE_SCHEME || 'http'}://${process.env.SOBEYS_SERVICE_HOST }${process.env.SOBEYS_SERVICE_PATH || '/'}`,
+    }
 };

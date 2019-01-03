@@ -20,9 +20,8 @@ module.exports.getUsers = async(req, context) => {
     
     
     try{
-        const logCongif = require('../lib/log');
-        logCongif.writeErrorInLog({error:'Testin log system'});
-        return 0;
+        // const logCongif = require('../lib/log');
+        // logCongif.writeErrorInLog({error:'Testin log system'});
         // validate input
         const validationErrors = validation.validateGetUsers(req).error;
         if(validationErrors){

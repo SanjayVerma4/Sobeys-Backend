@@ -27,10 +27,10 @@ Object.keys(db).forEach(function(modelName) {
 });
 sequelize.authenticate()
     .then(function(err) {
-        console.log('Connection has been established successfully to AMP Database.');
+        console.log('Connection has been established successfully to Sobeys Database.');
     })
     .catch(function(err) {
-        console.log('Unable to connect to AMP Database:', err);
+        console.log('Unable to connect to Sobeys Database:', err);
     });
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

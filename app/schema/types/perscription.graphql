@@ -1,0 +1,141 @@
+input lookupFilterObj{
+  rxBarcode:String,
+  storeId:String,
+  rxNum:Int,
+  patLastName:String,
+  patBirthDate:String,
+  rxSecurityToken:String
+}
+input lookupPerscriptionIn{
+  params:lookupFilterObj  
+}
+
+type pharmacyHoursOfOperationArr {
+  closingTime:String,
+  openingTime:String,
+  operatingDayType:String,
+  operatingDayTypeCode:String,
+  operatingHoursType:String,
+  operatingHoursTypeCode:String
+}
+
+type storeObj{
+  address1:String,
+  address2:String,
+  city:String,
+  corporateId:String,
+  defaultStoreLanguageCode:String,
+  email:String,
+  fax1:String,
+  fax2:String,
+  labelPrefix:String,
+  name:String,
+  pharmacyHoursOfOperation:[pharmacyHoursOfOperationArr],
+  phone1:String,
+  phone2:String,
+  postal:String,
+  prov:String,
+  storeId:String,
+  storeNumber:String,
+  timeZone:String,
+  website:String
+}
+
+type availableDeliveryRouteTypesArr{
+  routeType:String
+  routeTypeText:String
+}
+
+type drgImagesArr{
+  lookupKey : String
+}
+
+type drgObj{
+  ahfsCode:String
+  ahfsDescription:String
+  brandName:String
+  description:String
+  description2:String
+  din:String
+  dinType:String
+  dinTypeText:String
+  equivTo:String
+  form:String
+  formAbbreviation:String
+  genericName:String
+  handlingInstructions:String
+  images:[drgImagesArr]
+  manufacturer:String
+  manufacturerAbbreviation:String
+  refrigerated:String
+  schedule:String
+  strength:String
+}
+
+type rxObj{
+   availableDeliveryRouteTypes:[availableDeliveryRouteTypesArr]
+   defaultDeliveryRouteType:String
+   defaultDeliveryRouteTypeText:String
+   displayRxNum:String
+   dispQty:Int
+   doctorCallbackStatus:String
+   doctorCallbackStatusText:String
+   drg:drgObj
+   drugLine1:String
+   drugLine2:String
+   earliestRefillReadyDateRelativeMinutesFromNow:Int
+   earliestRefillReadyDateType:String
+   earliestRefillReadyDateValidUntil:String
+   fillDate:String
+   firstFillDate:String
+   isMixture:Boolean
+   notRefillableUntilDate:String
+   origRxNum:Int
+   refillability:String
+   refillabilityText:String
+   rxExpiryDate:String
+   rxNum:Int
+   rxStatus:String
+   rxStatusText:String
+   securityToken:String
+   stopDate:String
+}
+
+type patObj{
+  lastNameAbbreviation : String
+}
+
+type lookupData{
+  store:storeObj,
+  rx:rxObj,
+  pat:patObj
+}
+type lookupPerscriptionOut{
+  data:lookupData
+  errors:error
+}
+
+input refillPerscrptionIn{
+  storeId:String
+  patientId:String
+  rxNum:Int
+  securityToken:String
+  comment:String
+}
+
+type refillPerscrptionOut{
+  orderId:String
+  orderItemId:String
+  status:String
+  message:String
+  errors:error
+}
+
+type Query {
+  lookupPerscription(input:lookupPerscriptionIn):lookupPerscriptionOut
+}
+
+type Mutation {
+  addRefill(input:refillPerscrptionIn) : refillPerscrptionOut
+}
+

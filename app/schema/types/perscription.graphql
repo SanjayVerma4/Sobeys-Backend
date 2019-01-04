@@ -72,6 +72,15 @@ type drgObj{
   strength:String
 }
 
+type drgMixObj{
+  description:String
+  form:String
+  formAbbreviation:String
+  isIV:Boolean
+  refrigerated:Boolean
+  schedule:String
+}
+
 type rxObj{
    availableDeliveryRouteTypes:[availableDeliveryRouteTypesArr]
    defaultDeliveryRouteType:String
@@ -81,6 +90,7 @@ type rxObj{
    doctorCallbackStatus:String
    doctorCallbackStatusText:String
    drg:drgObj
+   drgMix:drgMixObj
    drugLine1:String
    drugLine2:String
    earliestRefillReadyDateRelativeMinutesFromNow:Int
@@ -89,6 +99,9 @@ type rxObj{
    fillDate:String
    firstFillDate:String
    isMixture:Boolean
+   isRefillable:Boolean
+   refillabilityMessage:String
+   refillabilityMessageQualifier:String
    notRefillableUntilDate:String
    origRxNum:Int
    refillability:String

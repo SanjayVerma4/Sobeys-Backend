@@ -5,7 +5,7 @@ const {SobeysAPI} = require('./../config').microservicesLinks;
 const axios = require('axios');
 const logCongif = require('../lib/log');
 const statusCode = require('../lib/constant');
-const dummyResponse = { "store": { "address1": "address1", "address2": "address2", "city": "string", "corporateId": "string", "defaultStoreLanguage": "string", "email": "string", "fax1": "string", "fax2": "string", "labelPrefix": "string", "name": "string", "pharmacyHoursOfOperation": [ { "operatingDayTypeText": "string", "operatingDayType": "string", "operatingDate": "string", "operatingHoursTypeText": "string", "operatingHoursType": "string", "openingTime": "string", "closingTime": "string" } ], "phone1": "string", "phone2": "string", "postal": "string", "prov": "string", "storeDownUserContactInformation": "string", "storeDownUserMessage": "string", "storeDownUserMessageValidUntil": "2019-01-03T07:38:01.773Z", "storeHoursOfOperation": [ { "operatingDayTypeText": "string", "operatingDayType": "string", "operatingDate": "string", "operatingHoursTypeText": "string", "operatingHoursType": "string", "openingTime": "string", "closingTime": "string" } ], "storeId": "string", "storeNumber": "string", "website": "string", "windowsTimeZone": "string", "latitude": 0, "longitude": 0, "supportsRxChainAttributes": true, "supportsUpdatingStoreDownMessages": true, "supportsAddNewRxToCart": true }, "rx": { "rxNum": 0, "origRxNum": 0, "displayRxNum": "string", "securityToken": "string", "drg": { "brandName": "string", "genericName": "string", "din": "string", "dinTypeText": "string", "dinType": "string", "manufacturer": "string", "manufacturerAbbreviation": "string", "description": "string", "description2": "string", "equivTo": "string", "form": "string", "formAbbreviation": "string", "strength": "string", "schedule": "string", "refrigerated": true, "handlingInstructions": "string", "ahfsCode": "string", "ahfsDescription": "string", "images": [ { "lookupKey": "string" } ] }, "drgMix": { "description": "string", "form": "string", "formAbbreviation": "string", "schedule": "string", "refrigerated": true, "isIV": true }, "isMixture": true, "drugLine1": "string", "drugLine2": "string", "rxStatusText": "string", "rxStatus": "string", "feeForServiceTypeText": "string", "feeForServiceType": "string", "fillDate": "2019-01-03T07:38:01.773Z", "cancelDate": "2019-01-03T07:38:01.773Z", "firstFillDate": "2019-01-03T07:38:01.773Z", "rxExpiryDate": "2019-01-03T07:38:01.773Z", "stopDate": "2019-01-03T07:38:01.773Z", "dispQty": 0, "earliestRefillReadyDateType": "string", "earliestRefillReadyDateAbsoluteDate": "2019-01-03T07:38:01.773Z", "earliestRefillReadyDateRelativeMinutesFromNow": 0, "earliestRefillReadyDateValidUntil": "2019-01-03T07:38:01.773Z", "refillabilityText": "string", "refillability": "string", "notRefillableUntilDate": "2019-01-03T07:38:01.773Z", "doctorCallbackStatusText": "string", "doctorCallbackStatus": "string", "defaultDeliveryRouteTypeText": "string", "defaultDeliveryRouteType": "string", "availableDeliveryRouteTypes": [ { "routeTypeText": "string", "routeType": "string" } ], "isRefillable": true, "refillabilityMessage": "string", "refillabilityMessageQualifier": "string" }, "pat": { "lastNameAbbreviation": "string" } }; 
+const dummyResponse = { "store": { "address1": "977 Toy Avenue", "address2": "ST state", "city": "Oshawa", "corporateId": "string", "defaultStoreLanguage": "EN", "email": "heroine@att.net", "fax1": "519-895-2408", "fax2": "519-895-2410", "labelPrefix": "string", "name": "James E Stone", "pharmacyHoursOfOperation": [ { "operatingDayTypeText": "[Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]", "operatingDayType": "Working/Non Working", "operatingDate": "[01/01/0000]", "operatingHoursTypeText": "Open", "operatingHoursType": "Open", "openingTime": "9:00 AM", "closingTime": "5:00 PM" } ], "phone1": "416.538.7788", "phone2": "416.538.3445", "postal": "515 St Clair Ave W", "prov": "CA", "storeDownUserContactInformation": "The Medicine Shoppe Pharmacy", "storeDownUserMessage": "Welcome", "storeDownUserMessageValidUntil": "2019-01-04T11:08:56.821Z", "storeHoursOfOperation": [ { "operatingDayTypeText": "[Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]", "operatingDayType": "Working/Non Working", "operatingDate": "[01/01/0000]", "operatingHoursTypeText": "Open", "operatingHoursType": "Open", "openingTime": "9:00 AM", "closingTime": "5:00 PM" } ], "storeId": "ABC132", "storeNumber": "1324532", "website": "https://demo.pharmacylink.ca/docs/swagger", "windowsTimeZone": "2019-01-04T11:08:56.821Z", "latitude": 0, "longitude": 0, "supportsRxChainAttributes": true, "supportsUpdatingStoreDownMessages": true, "supportsAddNewRxToCart": true }, "rx": { "rxNum": 0, "origRxNum": 0, "displayRxNum": "Er9X/ErSky", "securityToken": "AOB12B", "drg": { "brandName": "The Medicine Shoppe", "genericName": "ROYAJD", "din": "TEST", "dinTypeText": "TEST", "dinType": "TEST", "manufacturer": "MEDICINE", "manufacturerAbbreviation": "MED", "description": "Salt composition of medicine", "description2": "Before taking this product, tell your doctor or pharmacist if you are allergic to any of its ingredients", "equivTo": "TEST", "form": "TEST", "formAbbreviation": "TE", "strength": "TEST", "schedule": "OD", "refrigerated": true, "handlingInstructions": "OD", "ahfsCode": "OD", "ahfsDescription": "OD", "images": [ { "lookupKey": "Product details" } ] }, "drgMix": { "description": "TEST", "form": "TEST", "formAbbreviation": "TE", "schedule": "OD", "refrigerated": true, "isIV": true }, "isMixture": true, "drugLine1": "TEST", "drugLine2": "TEST", "rxStatusText": "TEST", "rxStatus": "TE", "feeForServiceTypeText": "TEST", "feeForServiceType": "TEST", "fillDate": "2019-01-04T11:08:56.821Z", "cancelDate": "2019-01-04T11:08:56.821Z", "firstFillDate": "2019-01-04T11:08:56.821Z", "rxExpiryDate": "2019-01-04T11:08:56.821Z", "stopDate": "2019-01-04T11:08:56.821Z", "dispQty": 0, "earliestRefillReadyDateType": "TEST", "earliestRefillReadyDateAbsoluteDate": "2019-01-04T11:08:56.821Z", "earliestRefillReadyDateRelativeMinutesFromNow": 0, "earliestRefillReadyDateValidUntil": "2019-01-04T11:08:56.821Z", "refillabilityText": "TEST", "refillability": "TEST", "notRefillableUntilDate": "2019-01-04T11:08:56.821Z", "doctorCallbackStatusText": "TEST", "doctorCallbackStatus": "TEST", "defaultDeliveryRouteTypeText": "TEST", "defaultDeliveryRouteType": "TEST", "availableDeliveryRouteTypes": [ { "routeTypeText": "TEST", "routeType": "TEST" } ], "isRefillable": true, "refillabilityMessage": "TEST", "refillabilityMessageQualifier": "TEST" }, "pat": { "lastNameAbbreviation": "TEST" } } ; 
 
 
 // fetch did data from did tables by condition.
@@ -18,7 +18,8 @@ module.exports.addRefill = async(req, context) => {
             return validationError(formatError(validationErrors.details));
         }        
         //const apiRes = await axios.post(`${SobeysAPI}rx/getAnonymous`, JSON.stringify(requestParameter));
-        return {status:statusCode.SUCCESS, message:'Refill prescription has been added', orderId:'24357', orderItemId:'w4fsdfdssd'};
+        return {status:statusCode.SUCCESS, orderId:'#BJ7987'};
+        // return {status:statusCode.SUCCESS, message:'Refill prescription has been added', orderId:'24357', orderItemId:'w4fsdfdssd'};
     }catch(err){
         logCongif.writeErrorInLog({error:err.message}); // log console
         return validationError([{fieldName:'Server Internal Error',message:err.message}]);
@@ -44,8 +45,29 @@ module.exports.lookupPerscription = async(req, context) => {
         else if(('storeId' in req) && ('rxNum' in req) && ('rxSecurityToken' in req)){ // lookup by storeid, rxnumber, security token
             requestParameter = {storeId:req.storeId,rxNum:req.rxNum,rxSecurityToken:req.rxSecurityToken};           
         }
+        const bakeResponse = {rx:{
+            isRefillable:dummyResponse.rx.isRefillable, 
+            refillabilityMessage:dummyResponse.rx.refillabilityMessage, refillabilityMessageQualifier:dummyResponse.rx.refillabilityMessageQualifier, earliestRefillReadyDateValidUntil:dummyResponse.rx.earliestRefillReadyDateValidUntil}};
+        
+        
         //const apiRes = await axios.post(`${SobeysAPI}rx/getAnonymous`, JSON.stringify(requestParameter));
-        return {data:dummyResponse};
+        return {data:bakeResponse};
+    }catch(err){
+        logCongif.writeErrorInLog({error:err.message}); // log console
+        return validationError([{fieldName:'Server Internal Error',message:err.message}]);
+    }
+}
+
+
+module.exports.getDetailsByRXNumber = async(req, context) => {
+    try{        
+        // validate input
+        const validationErrors = validation.validateGetDetailsByRXNumber(req).error;
+        if(validationErrors){
+            logCongif.writeErrorInLog({error:validationErrors.details}); // log console
+            return validationError(formatError(validationErrors.details));
+        }
+        return {data:{storeId:"ST2345",patientId:"PT9876",dob:"2017-03-1988",patFirstName:"Atif",patLastName:"Hasan"}};
     }catch(err){
         logCongif.writeErrorInLog({error:err.message}); // log console
         return validationError([{fieldName:'Server Internal Error',message:err.message}]);

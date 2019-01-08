@@ -30,5 +30,9 @@ routes.get('/listStore', (req, res) => {
     controllers.Store.listStore(req.body, res);
 });
 
+routes.post('/getDetailsByRXNumber', (req, res) => {
+    controllers.Perscription.getDetailsByRXNumber(req.body, res);
+});
+
 
  module.exports = routes;

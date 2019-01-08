@@ -34,6 +34,10 @@ let schemavalidateAddRefill = Joi.object().keys({
     comment:Joi.string()
 });
 
+let schemaGetDetailsByRXNumber = Joi.object().keys({
+    rxNum:Joi.string().required()
+}).required();
+
 /********************************************** Starts: Validation function  ***************************************************/
 
 const validatesaveUser = (Input) => { 
@@ -49,8 +53,13 @@ const validateAddRefill = (Input) => {
     return Joi.validate(Input, schemavalidateAddRefill, { abortEarly: false });
 }
 
+const validateGetDetailsByRXNumber = (Input) => {
+    return Joi.validate(Input, schemaGetDetailsByRXNumber, { abortEarly: false });
+}
+
 module.exports = {
     validatesaveUser,
     validateLookupPerscriptionInput,
     validateAddRefill,
+    validateGetDetailsByRXNumber,
 }

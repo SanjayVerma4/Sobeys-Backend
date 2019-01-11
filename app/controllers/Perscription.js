@@ -39,3 +39,14 @@ module.exports.addRefill = async(req, res) => {
         res.send(err.message);
     }
 }
+
+// fetch did data from did tables by condition
+module.exports.getDetailsByRXNumber = async(req, res) => {
+    try {
+        const response = await service.Perscription.getDetailsByRXNumber(req);
+        res.send(response);
+    } catch (err) {
+        res.send(err.message);
+    }
+}
+

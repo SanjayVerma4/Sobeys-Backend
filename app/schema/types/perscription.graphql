@@ -144,7 +144,25 @@ type refillPerscrptionOut{
   errors:error
 }
 
+input getDetailsByRXNumberIn{
+  rxNum:String
+}
+
+type RXDetails{
+  storeId:String
+  patientId:String
+  dob:String
+  patFirstName:String
+  patLastName:String
+}
+
+type getDetailsByRXNumberOut{
+  data:RXDetails
+  errors:error
+}
+
 type Query {
+  getDetailsByRXNumber(input:getDetailsByRXNumberIn):getDetailsByRXNumberOut 
   lookupPerscription(input:lookupPerscriptionIn):lookupPerscriptionOut
 }
 

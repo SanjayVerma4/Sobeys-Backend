@@ -34,7 +34,6 @@ module.exports.lookupPerscription = async(req, context) => {
             logCongif.writeErrorInLog({error:validationErrors.details}); // log console
             return validationError(formatError(validationErrors.details));
         }
-        req = req.params; // over ride the value
         let requestParameter = {};
         if('rxBarcode' in req){ // lookup by barcode           
             requestParameter.rxBarcode = req.rxBarcode;
@@ -44,6 +43,10 @@ module.exports.lookupPerscription = async(req, context) => {
         }
         else if(('storeId' in req) && ('rxNum' in req) && ('rxSecurityToken' in req)){ // lookup by storeid, rxnumber, security token
             requestParameter = {storeId:req.storeId,rxNum:req.rxNum,rxSecurityToken:req.rxSecurityToken};           
+        }
+        else{
+            logCongif.writeErrorInLog({error:statusCode.INVALID_PARAM}); // log console
+            return validationError([{fieldName:'Server Internal Error',message:statusCode.INVALID_PARAM}]);
         }
         const bakeResponse = {rx:{
             isRefillable:dummyResponse.rx.isRefillable, 
@@ -58,8 +61,8 @@ module.exports.lookupPerscription = async(req, context) => {
     }
 }
 
-
-module.exports.getDetailsByRXNumber = async(req, context) => {
+// This API for get store, patient details by RXNum
+module.exports.getDetailsByRXNumber = async(req, context) => { 
     try{        
         // validate input
         const validationErrors = validation.validateGetDetailsByRXNumber(req).error;
